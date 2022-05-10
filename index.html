@@ -12,7 +12,7 @@
     </head>
     <body>
       <div>
-        <h1 onclick = "makeItClickable()">This is the title of the page</h1>
+        <h1>This is the title of the page</h1>
         <h2>This is the subtitle of the page</h2>
       </div>
   
@@ -148,14 +148,15 @@
         /* EXERCISE 9
          Make the heading of the page change color every time the user clicks on it.
         */
-  
-        const makeItClickable = function () {
+        let Title = document.getElementsByTagName('h1')[0]
+        Title.addEventListener('click',function(makeItClickable)
+         {
             let Title = document.getElementsByTagName('h1')[0]
             const red = Math.round(Math.random() * 255);
             const green = Math.round(Math.random() * 255);
             const blue = Math.round(Math.random() * 255);
             Title.style.color = "rgb("+red+","+green+","+blue+")"    
-        };
+        }, false)
         /* EXERCISE 10
          Change the footer text with something else when the user clicks on it.
         */
