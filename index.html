@@ -42,6 +42,7 @@
             type="text"
             id="input-field"
             placeholder="input field for the exercise"
+                      
           />
         </div>
       </div>
@@ -105,7 +106,8 @@
   
         const addToTheSecond = function (content) {
             newItemNode = document.getElementById("secondList")
-            let liNode = newItemNode.getElementsByTagName('li')[0]
+            let liNode = document.createElement('li')
+            newItemNode.appendChild(liNode)
             liNode.innerText = content
             };
             addToTheSecond("Milk")
@@ -159,16 +161,22 @@
         */
   
         const changeFooterText = function () {
-            let footer = document.getElementsByTagName('h2')[1]
+            let i = 'h2'.length-1
+            let footer = document.getElementsByTagName('h2')[i]
             footer.innerText = "Changed"
         };
   
         /* EXERCISE 11
          Attach an event listener to the input field in the page for console logging its value just after any keystroke.
         */
-  
+         
+
         const inputField = document.getElementById("input-field");
-        // ...
+        
+        inputField.addEventListener('keyup', function (e) {
+       console.log(`You pressed ${e.key}`)
+        }, false)
+            
   
         /* EXERCISE 12
          Create a welcome alert message when the page successfully loads.
